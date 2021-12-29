@@ -11,18 +11,18 @@
   <Overview>Fetches an ecowater watersoftener's state from ecowater portal and exposes it to an MQTT broker every minute. Supports autodiscovery via Home Assistant. Multiple docker containers will need to be installed to support more than one ecowater watersoftener. No WebUI is necessary or available.</Overview>
   <Category>HomeAutomation: Tools:</Category>
   <TemplateURL>https://raw.githubusercontent.com/engelb/unraid-docker-templates/main/ecowater2mqtt.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/engelb/unraid-docker-templates/main/images/ecowater2mqtt_icon.png</Icon>
+  <Icon>https://raw.githubusercontent.com/engel-b/unraid-docker-templates/main/images/ecowater2mqtt_icon.png</Icon>
   <DonateText/>
   <DonateLink>https://www.buymeacoffee.com/engelb</DonateLink>
   <DonateImg/>
   <Description>Fetches an ecowater watersoftener's state from ecowater portal and exposes it to an MQTT broker every minute. Supports autodiscovery via Home Assistant. Multiple docker containers will need to be installed to support more than one ecowater watersoftener. No WebUI is necessary or available.</Description>
   <ExtraParams>--restart unless-stopped</ExtraParams>
-  <Config Name="Ecowater username" Target="ECOWATER_EMAIL" Default="" Mode="" Description="Ecowater username needed to login to ecowater portal" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="Ecowater password" Target="ECOWATER_PASS" Default="" Mode="" Description="Ecowater password needed to login to ecowater portal" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="Ecowater serial" Target="ECOWATER_SERIAL" Default="" Mode="" Description="Serial of ecowater watersoftener" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="MQTT broker host" Target="MQTT_HOST" Default=""     Mode="" Description="MQTT Broker IP or DNS Name" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="MQTT broker port" Target="MQTT_PORT" Default="8883" Mode="" Description="MQTT Broker port" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="MQTT Username" Target="MQTT_ID"   Default="" Mode="" Description="MQTT username to connect with" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-  <Config Name="MQTT Password" Target="MQTT_PASS" Default="" Mode="" Description="MQTT password to connect with" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Ecowater username" Target="ECOWATER_EMAIL" Default="" Mode="" Description="Ecowater username needed to login to ecowater portal" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Ecowater password" Target="ECOWATER_PASS" Default="" Mode="" Description="Ecowater password needed to login to ecowater portal" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Ecowater serial" Target="ECOWATER_SERIAL" Default="" Mode="" Description="Serial of ecowater watersoftener" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="MQTT broker host" Target="MQTT_HOST" Default="" Mode="" Description="MQTT Broker IP or DNS Name" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="MQTT broker port" Target="MQTT_PORT" Default="8883" Mode="" Description="MQTT Broker port" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="MQTT Username" Target="MQTT_ID" Default="" Mode="" Description="MQTT username to connect with" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MQTT Password" Target="MQTT_PASS" Default="" Mode="" Description="MQTT password to connect with" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="MQTT Topic" Target="MQTT_TOPIC" Default="ecowater/stat" Mode="" Description="MQTT topic to push state to" Type="Variable" Display="always" Required="false" Mask="false">ecowater/stat</Config>
 </Container>
