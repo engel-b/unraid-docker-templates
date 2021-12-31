@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>asterisk</Name>
+  <Repository>engelb/alpine-asterisk</Repository>
+  <Registry>https://hub.docker.com/r/engelb/alpine-asterisk/</Registry>
+  <WebUI/>
+  <Network>host</Network>
+  <Privileged>false</Privileged>
+  <Support>tbd</Support>
+  <Project>https://github.com/engel-b/alpine-asterisk</Project>
+  <Overview>Minimal asterisk installation without WebUI.</Overview>
+  <Category>HomeAutomation: Tools:</Category>
+  <TemplateURL>https://raw.githubusercontent.com/engelb/unraid-docker-templates/main/asterisk.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/engel-b/unraid-docker-templates/main/images/asterisk_icon.png</Icon>
+  <DonateText/>
+  <DonateLink>https://www.buymeacoffee.com/engelb</DonateLink>
+  <DonateImg/>
+  <Description>Minimal asterisk installation without WebUI.</Description>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <Config Name="Configuration" Target="/etc/asterisk" Default="/mnt/user/appdata/asterisk/conf/" Mode="rw" Description="Container Path: /etc/asterisk" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/asterisk/conf/</Config>
+  <Config Name="hello-world" Target="/var/lib/asterisk/sounds/hello-world.gsm" Default="" Mode="ro" Description="Container Path: /var/lib/asterisk/sounds/hello-world.gsm" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/asterisk/conf/hello-world.gsm</Config>
+</Container>
