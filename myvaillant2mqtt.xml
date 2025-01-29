@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>myVaillant2mqtt</Name>
+  <Repository>engelb/myvaillant2mqtt</Repository>
+  <Registry>https://hub.docker.com/r/engelb/myvaillant2mqtt/</Registry>
+  <WebUI/>
+  <Network>bridge</Network>
+  <Privileged>false</Privileged>
+  <Support>tbd</Support>
+  <Project>https://github.com/engel-b/myvaillant2mqtt</Project>
+  <Overview>Requests system states from myVaillant and publishes it to an MQTT broker every five minutes.</Overview>
+  <Category>HomeAutomation: Tools:</Category>
+  <TemplateURL>https://raw.githubusercontent.com/engelb/unraid-docker-templates/main/myvaillant2mqtt.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/engel-b/unraid-docker-templates/main/images/myvaillant2mqtt_icon.png</Icon>
+  <DonateText/>
+  <DonateLink>https://www.buymeacoffee.com/engelb</DonateLink>
+  <DonateImg/>
+  <Description>Requests system states from myVaillant and publishes it to an MQTT broker every five minutes.</Description>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <Config Name="username" Target="MYVAILLANT_USER" Default="" Mode="" Description="myVaillant username needed to login to myVaillant" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="password" Target="MYVAILLANT_PASS" Default="" Mode="" Description="myVaillant password needed to login to myVaillant" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="brand" Target="MYVAILLANT_BRAND" Default="vaillant" Mode="" Description="Brand of your HVAC equipment. https://signalkraft.com/mypyllant-component/#supported-brands-countries" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="country" Target="MYVAILLANT_COUNTRY" Default="germany" Mode="" Description="The country you registered your myVAILLANT account in. The list of options is limited to known supported countries. https://signalkraft.com/mypyllant-component/#supported-brands-countries" Type="Variable" Display="always" Required="true" Mask="false"/>
+  
+  <Config Name="MQTT broker host" Target="MQTT_HOST" Default="" Mode="" Description="MQTT Broker IP or DNS Name" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="MQTT broker port" Target="MQTT_PORT" Default="8883" Mode="" Description="MQTT Broker port" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MQTT username" Target="MQTT_ID" Default="" Mode="" Description="MQTT username to connect with broker" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MQTT password" Target="MQTT_PASS" Default="" Mode="" Description="MQTT password to connect with broker" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="MQTT topic" Target="MQTT_TOPIC" Default="test/vaillant" Mode="" Description="MQTT topic to push state to" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MQTT enable ssl" Target="MQTT_USE_SSL" Default="False" Mode="" Description="MQTT switch to enable ssl and cert verification light" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MQTT fingerprint of trusted cert" Target="MQTT_TRUSTED_FINGERPRINT" Default="" Mode="" Description="MQTT hash of certificate of trusted server. If unsure about the correct value, enable MQTT_USE_SSL and let MQTT_TRUSTED_FINGERPRINT empty. Start the container and have a look into container log." Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>
