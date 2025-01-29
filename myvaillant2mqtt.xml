@@ -23,7 +23,7 @@
   <Config Name="country" Target="MYVAILLANT_COUNTRY" Default="germany" Mode="" Description="The country you registered your myVAILLANT account in. The list of options is limited to known supported countries. https://signalkraft.com/mypyllant-component/#supported-brands-countries" Type="Variable" Display="always" Required="true" Mask="false"/>
   
   <Config Name="MQTT broker host" Target="MQTT_HOST" Default="" Mode="" Description="MQTT Broker IP or DNS Name" Type="Variable" Display="always" Required="true" Mask="false"/>
-  <Config Name="MQTT broker port" Target="MQTT_PORT" Default="8883" Mode="" Description="MQTT Broker port" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MQTT broker port" Target="MQTT_PORT" Default="1883" Mode="" Description="MQTT Broker port" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="MQTT username" Target="MQTT_ID" Default="" Mode="" Description="MQTT username to connect with broker" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="MQTT password" Target="MQTT_PASS" Default="" Mode="" Description="MQTT password to connect with broker" Type="Variable" Display="always" Required="false" Mask="true"/>
   <Config Name="MQTT topic" Target="MQTT_TOPIC" Default="test/vaillant" Mode="" Description="MQTT topic to push state to" Type="Variable" Display="always" Required="false" Mask="false"/>
