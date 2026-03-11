@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>home-mqtt-gateway</Name>
+  <Repository>engelb/homemqttgateway</Repository>
+  <Registry>https://hub.docker.com/r/engelb/homemqttgateway/</Registry>
+  <Network></Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>tbd</Support>
+  <Project>https://github.com/engel-b/home-mqtt-gateway</Project>
+  <Overview>This is a wrapper used to get smart home device data from special apis or manufacturer cloud services into the local smart home. It requests the registered systems an pushes the data to the configured mqtt topic.</Overview>
+  <Category>HomeAutomation: Tools:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/engelb/unraid-docker-templates/main/homemqttgateway.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/engel-b/unraid-docker-templates/main/images/homemqttgateway_icon.png</Icon>
+  <ExtraParams>--restart unless-stopped --cpus="0.5" --memory="512m" --memory-swap="1g"</ExtraParams>
+  <PostArgs/>
+  <CPUset>1</CPUset>
+  <DateInstalled>1744956085</DateInstalled>
+  <DonateText/>
+  <DonateLink>https://www.buymeacoffee.com/engelb</DonateLink>
+  <Requires/>
+  <Config Name="MQTT broker host" Target="MQTT_HOST" Default="" Mode="" Description="MQTT Broker IP or DNS Name" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="MQTT broker port" Target="MQTT_PORT" Default="1883" Mode="" Description="MQTT Broker port" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="MQTT username" Target="MQTT_ID" Default="" Mode="" Description="MQTT username to connect with broker" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="MQTT password" Target="MQTT_PASS" Default="" Mode="" Description="MQTT password to connect with broker" Type="Variable" Display="always" Required="false" Mask="true"></Config>
+  <Config Name="MQTT enable ssl" Target="MQTT_USE_SSL" Default="False" Mode="" Description="MQTT switch to enable ssl and cert verification light" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="MQTT fingerprint of trusted cert" Target="MQTT_TRUSTED_FINGERPRINT" Default="" Mode="" Description="MQTT hash of certificate of trusted server. If unsure about the correct value, enable MQTT_USE_SSL and let MQTT_TRUSTED_FINGERPRINT empty. Start the container and have a look into container log." Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  
+  <Config Name="ECOWATER username" Target="ECOWATER_EMAIL" Default="" Mode="" Description="Ecowater username needed to login to platform" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="ECOWATER password" Target="ECOWATER_PASS" Default="" Mode="" Description="Ecowater password needed to login to platform" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="ECOWATER serialnumber" Target="ECOWATER_SERIAL" Default="" Mode="" Description="Optional: serialnumber to filter, if multiple devices are requistered to this account" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="ECOWATER MQTT topic" Target="ECOWATER_TOPIC" Default="test/ecowater" Mode="" Description="MQTT topic to push the data to" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="ECOWATER poll intervall" Target="ECOWATER_POLL_INTERVALL" Default="30" Mode="" Description="time intervall in seconds between updates; default is 30" Type="Variable" Display="always" Required="false" Mask="false">30</Config>
+
+  <Config Name="MYVAILLANT username" Target="MYVAILLANT_USER" Default="" Mode="" Description="myVaillant username needed to login to myVaillant" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="MYVAILLANT password" Target="MYVAILLANT_PASS" Default="" Mode="" Description="myVaillant password needed to login to myVaillant" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="MYVAILLANT brand" Target="MYVAILLANT_BRAND" Default="vaillant" Mode="" Description="Brand of your HVAC equipment. https://signalkraft.com/mypyllant-component/#supported-brands-countries" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="MYVAILLANT country" Target="MYVAILLANT_COUNTRY" Default="germany" Mode="" Description="The country you registered your myVAILLANT account in. The list of options is limited to known supported countries. https://signalkraft.com/mypyllant-component/#supported-brands-countries" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="MYVAILLANT MQTT topic" Target="MYVAILLANT_TOPIC" Default="test/vaillant" Mode="" Description="MQTT topic to push the data to" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="MYVAILLANT poll intervall" Target="MYVAILLANT_POLL_INTERVALL" Default="900" Mode="" Description="time intervall in seconds between updates; default is 900 (15min)" Type="Variable" Display="always" Required="false" Mask="false">900</Config>
+
+  <Config Name="UPONOR gateway" Target="UPONOR_GATEWAY" Default="" Mode="" Description="hostname or IP of gateway" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="UPONOR MQTT topic" Target="UPONOR_TOPIC" Default="test/uponor" Mode="" Description="MQTT topic to push the data to" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="UPONOR poll intervall" Target="UPONOR_POLL_INTERVALL" Default="60" Mode="" Description="time intervall in seconds between updates; default is 60 (1min)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <TailscaleStateDir/>
+</Container>
