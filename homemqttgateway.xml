@@ -44,5 +44,6 @@
   <Config Name="UPONOR gateway" Target="UPONOR_GATEWAY" Default="" Mode="" Description="hostname or IP of gateway" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <Config Name="UPONOR MQTT topic" Target="UPONOR_TOPIC" Default="test/uponor" Mode="" Description="MQTT topic to push the data to" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="UPONOR poll intervall" Target="UPONOR_POLL_INTERVALL" Default="60" Mode="" Description="time intervall in seconds between updates; default is 60 (1min)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="UPONOR_ROOM_TOPIC_MAPPING" Target="UPONOR_ROOM_TOPIC_MAPPING" Default="" Mode="" Description="Map room topics <roomname>=<topic>;<roomname>=<topic>;<roomname>=<topic> (optional, will become: UPONOR_TOPIC/<topic>)" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <TailscaleStateDir/>
 </Container>
